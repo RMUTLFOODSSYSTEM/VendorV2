@@ -1,0 +1,91 @@
+/* Navbar.css */
+
+/* ทำให้ Navbar อยู่ด้านบนสุด */
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed; /* ทำให้ Navbar อยู่ที่ตำแหน่งคงที่ */
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 15px 30px;
+  background-color: #28a745; /* สีเขียว */
+  color: white;
+  z-index: 1000; /* ทำให้ Navbar อยู่เหนือเนื้อหาอื่น */
+}
+
+.navbar-brand {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.navbar-links {
+  display: flex;
+  gap: 20px;
+}
+
+.navbar-link {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  transition: color 0.3s;
+}
+
+.navbar-link:hover {
+  color: #ff6f61; /* เปลี่ยนสีเมื่อ hover */
+}
+
+button.navbar-link {
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+button.navbar-link:hover {
+  color: #ff6f61; /* เปลี่ยนสีเมื่อ hover */
+}
+
+.navbar-user {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.logout-btn {
+  background-color: #ff6f61;
+  border-radius: 4px;
+  padding: 5px 10px;
+}
+
+.logout-btn:hover {
+  background-color: #ff3f2e;
+}
+
+.login-register-btn {
+  background-color: #007bff;
+  border-radius: 4px;
+  padding: 5px 10px;
+}
+
+.login-register-btn:hover {
+  background-color: #0056b3;
+}
+
+/* เพิ่ม CSS สำหรับ Notification Badge */
+.notification-badge {
+  background-color: red;
+  color: white;
+  border-radius: 50%;
+  padding: 5px 10px;
+  font-size: 14px;
+  margin-left: 5px;
+}
