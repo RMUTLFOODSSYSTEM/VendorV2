@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { firestore1 } from '../firebase';  // ใช้ firestore1 จากโปรเจกต์แรก
+import { firestore1 } from '../firebase';
 import { collection, addDoc, getDocs, updateDoc, deleteDoc, doc } from 'firebase/firestore';
 import './MenuManagement.css';
 
@@ -8,7 +8,6 @@ const MenuManagement = () => {
   const [menus, setMenus] = useState([]);
   const [editingMenu, setEditingMenu] = useState(null);
 
-  // ดึงรายการเมนูจาก Firestore
   useEffect(() => {
     fetchMenus();
   }, []);
@@ -36,7 +35,7 @@ const MenuManagement = () => {
 
       alert("เมนูถูกเพิ่มแล้ว!");
       setNewMenu({ name: '', price: '' });
-      fetchMenus(); // รีเฟรชข้อมูล
+      fetchMenus();
     } catch (error) {
       console.error("Error adding document: ", error);
       alert("เกิดข้อผิดพลาดในการเพิ่มเมนู");
@@ -64,7 +63,7 @@ const MenuManagement = () => {
       alert("เมนูถูกอัปเดตแล้ว!");
       setEditingMenu(null);
       setNewMenu({ name: '', price: '' });
-      fetchMenus(); // รีเฟรชข้อมูล
+      fetchMenus();
     } catch (error) {
       console.error("Error updating document: ", error);
       alert("เกิดข้อผิดพลาดในการอัปเดตเมนู");
@@ -77,7 +76,7 @@ const MenuManagement = () => {
     try {
       await deleteDoc(doc(firestore1, "menus", menuId));
       alert("เมนูถูกลบแล้ว!");
-      fetchMenus(); // รีเฟรชข้อมูล
+      fetchMenus();
     } catch (error) {
       console.error("Error deleting document: ", error);
       alert("เกิดข้อผิดพลาดในการลบเมนู");
@@ -113,10 +112,12 @@ const MenuManagement = () => {
       <h2>รายการเมนู</h2>
       <ul className="menu-list">
         {menus.map((menu) => (
-          <li key={menu.id}>
-            {menu.name} - {menu.price} บาท
-            <button className="edit-btn" onClick={() => handleEdit(menu)}>แก้ไข</button>
-            <button className="delete-btn" onClick={() => deleteMenuFromFirestore(menu.id)}>ลบ</button>
+          <li key={menu.id} className="menu-item">
+            <span>{menu.name} - {menu.price} บาท</span>
+            <div className="menu-actions">
+              <button className="edit-btn" onClick={() => handleEdit(menu)}>แก้ไข</button>
+              <button className="delete-btn" onClick={() => deleteMenuFromFirestore(menu.id)}>ลบ</button>
+            </div>
           </li>
         ))}
       </ul>

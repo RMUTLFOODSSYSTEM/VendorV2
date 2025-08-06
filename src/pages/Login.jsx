@@ -65,9 +65,9 @@ function Login() {
           </button>
         </form>
         {error && <p className="error-message">{error}</p>}
-        <button className="register-link" onClick={() => navigate("/register")}>
+        {/* <button className="register-link" onClick={() => navigate("/register")}>
           Don't have an account? Register
-        </button>
+        </button> */}
       </div>
     </div>
   );

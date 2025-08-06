@@ -1,100 +1,77 @@
-/* Login.css */
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: Arial, sans-serif;
-  background-color: #f7f7f7;
+/* พื้นหลังหลักของหน้า */
+.home {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #f3f4f6; /* เทาอ่อน */
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
-.login-container, .register-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 100%;
+/* ส่วน Hero Section */
+.home header {
+  background-color: #d1fae5; /* เขียวอ่อน */
+  text-align: center;
+  padding: 3rem 1rem;
 }
 
-.login-box, .register-box {
-  background-color: #fff;
+.home header h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #065f46; /* เขียวเข้ม */
+  margin-bottom: 0.5rem;
+}
+
+.home header p {
+  font-size: 1.1rem;
+  color: #374151; /* เทาเข้ม */
+}
+
+/* Section เกี่ยวกับเรา */
+.about-section {
+  max-width: 800px;
+  margin: 3rem auto;
+  padding: 0 1rem;
+  text-align: center;
+}
+
+.about-section h2 {
+  font-size: 1.8rem;
+  color: #047857; /* เขียว */
+  margin-bottom: 1rem;
+}
+
+.about-section p {
+  color: #4b5563; /* เทากลาง */
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+/* กล่องข้อความต้อนรับร้านค้า */
+.shop-welcome {
+  background-color: #ffffff;
+  border: 1px solid #a7f3d0; /* เขียวอ่อน */
   border-radius: 8px;
-  padding: 40px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  width: 100%;
-  max-width: 400px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 }
 
-h1 {
+.shop-welcome h3 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #047857;
+  margin-bottom: 0.5rem;
+}
+
+.shop-welcome p {
+  color: #374151;
+  line-height: 1.6;
+}
+
+/* Footer */
+footer {
+  background-color: #065f46;
+  color: white;
   text-align: center;
-  margin-bottom: 20px;
-  font-size: 28px;
-  color: #333;
-}
-
-.input-group {
-  margin-bottom: 20px;
-}
-
-.input-group label {
-  font-size: 16px;
-  color: #333;
-  display: block;
-  margin-bottom: 8px;
-}
-
-.input-group input {
-  width: 100%;
-  padding: 10px;
-  font-size: 16px;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-}
-
-button {
-  width: 100%;
-  padding: 12px;
-  font-size: 16px;
-  color: #fff;
-  background-color: #007BFF;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-button:hover {
-  background-color: #0056b3;
-}
-
-button:disabled {
-  background-color: #cccccc;
-  cursor: not-allowed;
-}
-
-.error-message {
-  color: #ff4d4d;
-  font-size: 14px;
-  text-align: center;
-  margin-top: 10px;
-}
-
-.register-link {
-  margin-top: 20px;
-  display: block;
-  text-align: center;
-  font-size: 14px;
-  color: #ffffff;
-  text-decoration: none;
-}
-
-.register-link:hover {
-  text-decoration: underline;
+  padding: 1rem;
+  margin-top: auto;
 }
